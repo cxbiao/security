@@ -1,0 +1,32 @@
+server:
+  port: 8000
+
+management:
+  endpoint:
+    health:
+      show-details: always
+    shutdown:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+
+spring:
+  application:
+    name: gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        #要在控制台创建namespace ,填写相应id
+    #        namespace: 3237a1b5-ae16-4367-8cec-da39796b54c0
+    #        group: xx
+    #        cluster-name: bb
+    gateway:
+      discovery:
+        locator:
+          # 让gateway通过服务发现组件找到其他的微服务
+          enabled: true
+      #匹配到了一个就不会往下走了

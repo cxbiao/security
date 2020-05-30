@@ -1,0 +1,32 @@
+server:
+  port: 8400
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: micro-web
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+
+
+
+security:
+  oauth2:
+    resource:
+      user-info-uri: http://localhost:8000/micro-security/security/check
+      #prefer-token-info: false
+#    client:
+#      client-id: pc
+#      client-secret: 123456
+#      access-token-uri: http://localhost:8000/micro-security/oauth/token
+#      grant-type: client_credentials
+#      scope: all
+
+
+logging:
+  level:
+    org.springframework.security: debug
+

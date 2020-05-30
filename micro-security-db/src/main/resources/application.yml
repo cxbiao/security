@@ -1,0 +1,33 @@
+server:
+  port: 9500
+
+##密码模式
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: micro-security
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://120.78.160.86:3306/security?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false
+    username: root
+    password: 123456
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+
+
+
+
+logging:
+  level:
+    org.springframework.security: debug
+
+
+
+

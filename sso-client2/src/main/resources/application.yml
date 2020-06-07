@@ -1,7 +1,11 @@
 server:
   port: 8701
+#  servlet:
+#    context-path: /client2
   servlet:
-    context-path: /client2
+    session:
+      cookie:
+        name: OAUTH2SESSION2
 spring:
   main:
     allow-bean-definition-overriding: true
@@ -17,13 +21,13 @@ security:
   oauth2:
     resource:
       jwt:
-        key-uri: http://localhost:8500/sso/oauth/token_key
+        key-uri: http://localhost:8500/oauth/token_key
       prefer-token-info: false
     client:
       client-id: pc2
       client-secret: 123456
-      access-token-uri: http://localhost:8500/sso/oauth/token
-      user-authorization-uri: http://localhost:8500/sso/oauth/authorize
+      access-token-uri: http://localhost:8500/oauth/token
+      user-authorization-uri: http://localhost:8500/oauth/authorize
 
 
 

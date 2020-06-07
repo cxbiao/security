@@ -66,7 +66,7 @@ public class UserController {
         return "aa";
     }
 
-    //http://localhost:8700/client1/user/queryUser
+    //http://localhost:8700/user/queryUser  第一次这样调用有问题，第二次就可以
     @PreAuthorize("hasAuthority('ADMIN')")
     @RequestMapping("/queryUser")
     public List<String> queryUser(HttpServletRequest request) {

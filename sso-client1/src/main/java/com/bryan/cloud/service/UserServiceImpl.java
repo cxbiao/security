@@ -34,7 +34,7 @@ public class UserServiceImpl implements UserService {
         //网关的appId，appSecret，需要在数据库oauth_client_details注册
         headers.setBasicAuth("james","123456");
         List<String> results = restTemplate.exchange("http://"
-                        + SERVIER_NAME + "/client2/user/queryContent", HttpMethod.GET,
+                        + SERVIER_NAME + "/user/queryContent", HttpMethod.GET,
                 new HttpEntity<String>(headers), List.class).getBody();
 //        List<String> results = restTemplate.exchange("http://"
 //                        + SERVIER_NAME + "/user/queryContent", HttpMethod.GET,null,

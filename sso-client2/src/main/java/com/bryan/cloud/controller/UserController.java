@@ -23,7 +23,7 @@ public class UserController {
     private UserService userService;
 
 
-    //http://192.168.201.2:8701/client2/user/queryContent
+    //http://192.168.210.2:8701/user/queryContent
     @RequestMapping("/queryContent")
     public List<String> queryContent(HttpServletRequest request) {
         log.info("queryContent======");

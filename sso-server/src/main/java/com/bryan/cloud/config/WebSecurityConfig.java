@@ -56,9 +56,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.requestMatchers().anyRequest()
                 .and()
                 .authorizeRequests()
-                .antMatchers("/oauth/**").permitAll();
+                .antMatchers("/oauth/**").authenticated()
+                .and()
+                //表单验证
+//                .formLogin().permitAll();
+             // .formLogin().loginPage("/login").permitAll();
+              //httpBasic认证
+             .httpBasic();
 
-        http.authorizeRequests().antMatchers("/**").fullyAuthenticated().and().httpBasic();  //拦截所有请求 通过httpBasic进行认证
+       // http.authorizeRequests().antMatchers("/**").fullyAuthenticated().and().httpBasic();  //拦截所有请求 通过httpBasic进行认证
 
     }
 
